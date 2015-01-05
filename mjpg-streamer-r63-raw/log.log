@@ -1,0 +1,70 @@
+Script started on Fri 12 Dec 2014 04:04:15 AM CST
+]0;root@ubuntu: /home/sibinlu/project/mjpg-streamer-r63-2root@ubuntu:/home/sibinlu/project/mjpg-streamer-r63-2# exitmake all
+make -C plugins/input_gspcav1 all
+make[1]: Entering directory `/home/sibinlu/project/mjpg-streamer-r63-2/plugins/input_gspcav1'
+gcc -c -O2 -DLINUX -D_GNU_SOURCE -Wall -shared -fPIC -o spcav4l.lo spcav4l.c
+spcav4l.c: In function ‘init_videoIn’:
+spcav4l.c:86:37: warning: argument to ‘sizeof’ in ‘memset’ call is the same expression as the destination; did you mean to provide an explicit length? [-Wsizeof-pointer-memaccess]
+   memset (vd->cameraname, 0, sizeof (vd->cameraname));
+                                     ^
+spcav4l.c: In function ‘v4lGrab’:
+spcav4l.c:192:10: warning: variable ‘temps’ set but not used [-Wunused-but-set-variable]
+   double temps = 0;
+          ^
+spcav4l.c: In function ‘probeSize’:
+spcav4l.c:490:21: warning: variable ‘minh’ set but not used [-Wunused-but-set-variable]
+  int maxw,minw,maxh,minh;
+                     ^
+spcav4l.c:490:16: warning: variable ‘maxh’ set but not used [-Wunused-but-set-variable]
+  int maxw,minw,maxh,minh;
+                ^
+spcav4l.c: In function ‘changeSize’:
+spcav4l.c:540:7: warning: variable ‘erreur’ set but not used [-Wunused-but-set-variable]
+   int erreur;
+       ^
+In file included from /usr/include/x86_64-linux-gnu/asm/ioctl.h:1:0,
+                 from /usr/include/linux/ioctl.h:4,
+                 from /usr/include/libv4l1-videodev.h:6,
+                 from spcav4l.h:37,
+                 from spcav4l.c:25:
+spcav4l.c: In function ‘spcaSetAutoExpo’:
+spcav4l.h:79:34: error: ‘BASE_VIDIOCPRIVATE’ undeclared (first use in this function)
+ #define SPCASVIDIOPARAM _IOW('v',BASE_VIDIOCPRIVATE + 2,struct video_param)
+                                  ^
+spcav4l.c:1085:14: note: in expansion of macro ‘SPCASVIDIOPARAM’
+  if(ioctl(fd,SPCASVIDIOPARAM, videoparam) == -1){
+              ^
+spcav4l.h:79:34: note: each undeclared identifier is reported only once for each function it appears in
+ #define SPCASVIDIOPARAM _IOW('v',BASE_VIDIOCPRIVATE + 2,struct video_param)
+                                  ^
+spcav4l.c:1085:14: note: in expansion of macro ‘SPCASVIDIOPARAM’
+  if(ioctl(fd,SPCASVIDIOPARAM, videoparam) == -1){
+              ^
+spcav4l.c: In function ‘spcaPrintParam’:
+spcav4l.h:78:34: error: ‘BASE_VIDIOCPRIVATE’ undeclared (first use in this function)
+ #define SPCAGVIDIOPARAM _IOR('v',BASE_VIDIOCPRIVATE + 1,struct video_param)
+                                  ^
+spcav4l.c:1093:14: note: in expansion of macro ‘SPCAGVIDIOPARAM’
+  if(ioctl(fd,SPCAGVIDIOPARAM, videoparam) == -1){
+              ^
+spcav4l.c: In function ‘spcaSetTimeInterval’:
+spcav4l.h:79:34: error: ‘BASE_VIDIOCPRIVATE’ undeclared (first use in this function)
+ #define SPCASVIDIOPARAM _IOW('v',BASE_VIDIOCPRIVATE + 2,struct video_param)
+                                  ^
+spcav4l.c:1105:14: note: in expansion of macro ‘SPCASVIDIOPARAM’
+  if(ioctl(fd,SPCASVIDIOPARAM, videoparam) == -1){
+              ^
+spcav4l.c: In function ‘spcaSetQuality’:
+spcav4l.h:79:34: error: ‘BASE_VIDIOCPRIVATE’ undeclared (first use in this function)
+ #define SPCASVIDIOPARAM _IOW('v',BASE_VIDIOCPRIVATE + 2,struct video_param)
+                                  ^
+spcav4l.c:1117:14: note: in expansion of macro ‘SPCASVIDIOPARAM’
+  if(ioctl(fd,SPCASVIDIOPARAM, videoparam) == -1){
+              ^
+make[1]: *** [spcav4l.lo] Error 1
+make[1]: Leaving directory `/home/sibinlu/project/mjpg-streamer-r63-2/plugins/input_gspcav1'
+make: *** [input_gspcav1.so] Error 2
+]0;root@ubuntu: /home/sibinlu/project/mjpg-streamer-r63-2root@ubuntu:/home/sibinlu/project/mjpg-streamer-r63-2# exit
+exit
+
+Script done on Fri 12 Dec 2014 04:04:22 AM CST
